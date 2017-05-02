@@ -220,19 +220,19 @@ namespace semver
 	};
 
 	//! Compare two versions for equality
-	bool operator==(const Version& lhs, const Version& rhs)
+	inline static bool operator==(const Version& lhs, const Version& rhs)
 	{
 		return (lhs.major == rhs.major) && (lhs.minor == rhs.minor) && (lhs.patch == rhs.patch) && (lhs.prerelease == rhs.prerelease);
 	}
 
 	//! Compare two versions for inequality
-	bool operator!=(const Version& lhs, const Version& rhs)
+	inline static bool operator!=(const Version& lhs, const Version& rhs)
 	{
 		return !(lhs == rhs);
 	}
 
 	//! Compare two versions for ordinality
-	bool operator<(const Version& lhs, const Version& rhs)
+	inline static bool operator<(const Version& lhs, const Version& rhs)
 	{
 		if (lhs.major < rhs.major)
 			return true;
@@ -258,25 +258,25 @@ namespace semver
 	}
 
 	//! Compare two versions for ordinality or equality
-	bool operator<=(const Version& lhs, const Version& rhs)
+	inline static bool operator<=(const Version& lhs, const Version& rhs)
 	{
 		return (lhs == rhs) || (lhs < rhs);
 	}
 
 	//! Compare two versions for ordinality
-	bool operator>(const Version& lhs, const Version& rhs)
+	inline static bool operator>(const Version& lhs, const Version& rhs)
 	{
 		return !(lhs <= rhs);
 	}
 
 	//! Compare two versions for ordinality or equality
-	bool operator>=(const Version& lhs, const Version& rhs)
+	inline static bool operator>=(const Version& lhs, const Version& rhs)
 	{
 		return !(lhs < rhs);
 	}
 
 	//! Write a version to an output stream
-	std::ostream& operator<<(std::ostream& stream, const Version& version)
+	inline static std::ostream& operator<<(std::ostream& stream, const Version& version)
 	{
 		return stream << version.toString();
 	}
