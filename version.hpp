@@ -6,17 +6,18 @@
 //  Licensed under the BSD 3-clause license.
 //
 
-#ifndef DSPERADOS_SEMVER_HPP
-#define DSPERADOS_SEMVER_HPP
+#ifndef MODITONE_SEMVER_HPP
+#define MODITONE_SEMVER_HPP
 
 #include <cctype>
 #include <istream>
-#include <jsonata/value.hpp>
 #include <stdexcept>
 #include <sstream>
 #include <string>
 #include <ostream>
 #include <vector>
+
+#include <moditone/jsonata/value.hpp>
 
 namespace semver
 {
